@@ -3,6 +3,7 @@ body{
   }
   .container{
     max-width: 400px;
+    text-align: center;
   }
   input[type=text],
   input[type=text]:focus{
