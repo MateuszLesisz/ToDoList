@@ -39,12 +39,12 @@ if(e.target.classList.contains("delete"))
 const filterTodos = (term) => {
 
 Array.from(list.children)
-.filter((toDo) => !toDo.textContent.includes(term))
+.filter((toDo) => !toDo.textContent.toLowerCase().includes(term))
 .forEach((toDo) => toDo.classList.add("filtered"));
 
 
 Array.from(list.children)
-.filter((toDo) => toDo.textContent.includes(term))
+.filter((toDo) => toDo.textContent.toLowerCase().includes(term))
 .forEach((toDo) => toDo.classList.remove("filtered"))
 
 
@@ -53,7 +53,7 @@ Array.from(list.children)
 //keyup event
 
 search.addEventListener("keyup", () => {
-    const term = search.value.trim();
+    const term = search.value.trim().toLowerCase();
     filterTodos(term);
 
 });
